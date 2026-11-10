@@ -1,0 +1,16 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+#deep{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;overflow:hidden}
+#deep>*{position:absolute;pointer-events:none}
+.fish{top:var(--y);left:-60px;width:var(--s);fill:rgba(190,235,255,.5);animation:patrol var(--d) linear var(--dl) infinite alternate}
+@keyframes patrol{to{transform:translateX(var(--e,calc(100vw + 140px)))}}
+@keyframes flipf{0%,49.99%{transform:scaleX(-1)}50%,100%{transform:scaleX(1)}}
+.fish use,.ff use,.big path{transform-box:fill-box;transform-origin:center;animation:flipf calc(var(--d)*2) linear var(--dl) infinite}
+.big{left:-400px;--e:calc(100vw + 440px);animation:patrol var(--d) linear var(--dl) infinite alternate}
+.weed{bottom:-4px;transform-origin:50% 100%;animation:sway var(--d) ease-in-out infinite alternate;fill:rgba(20,120,110,.55)}
+@keyframes sway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.bub{bottom:-20px;border:1px solid rgba(255,255,255,.5);border-radius:50%;animation:rise var(--d) linear var(--dl) infinite}
+@keyframes rise{to{transform:translateY(-110vh)}}
+
+@media(max-width:700px){#deep .fish:nth-of-type(n+10),#deep .bub:nth-of-type(n+7),#deep .weed:nth-of-type(n+8){display:none}}

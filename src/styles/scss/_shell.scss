@@ -1,0 +1,19 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.shellwrap{position:relative;overflow:hidden;text-align:center;display:flex;align-items:flex-end;padding:90px 0 clamp(50px,8vw,120px);min-height:clamp(820px,70vw,1050px)}
+.shellwrap .inner{position:relative;z-index:4}
+.hint{font-size:18px;margin:0 0 10px;transition:opacity .5s}
+#shell{position:relative;display:inline-block;width:min(62.6667vw,386.6667px);max-width:100%;container-type:inline-size;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.stage{display:block}
+.stage{position:relative;width:100%;aspect-ratio:1291/1126;filter:drop-shadow(0 18px 26px rgba(0,12,45,.45))}
+.stage img{position:absolute;inset:0;width:100%;height:100%;user-select:none;-webkit-user-drag:none;pointer-events:none}
+#sBase{clip-path:polygon(0.77% 54.12%,8.49% 58.92%,13.90% 59.45%,18.53% 63.35%,24.71% 66.02%,31.66% 66.37%,39.38% 68.14%,49.42% 68.68%,59.46% 67.97%,66.41% 64.24%,72.59% 60.69%,80.31% 59.27%,88.03% 60.16%,94.21% 56.25%,99.31% 54.12%,105.79% 54.12%,105.79% 110.21%,-5.41% 110.21%,-5.41% 54.12%);transition:opacity .8s}
+#sLid{clip-path:polygon(-5.41% -10.48%,105.79% -10.48%,105.79% 54.12%,99.31% 54.48%,94.21% 56.61%,88.03% 60.51%,80.31% 59.63%,72.59% 61.05%,66.41% 64.60%,59.46% 68.32%,49.42% 69.03%,39.38% 68.50%,31.66% 66.73%,24.71% 66.37%,18.53% 63.71%,13.90% 59.80%,8.49% 59.27%,0.77% 54.48%,-5.41% 54.12%);transform-origin:50% 62%;transition:transform 1.1s var(--ease),opacity .9s .1s}
+#sOpen{opacity:0;transform:translateY(5%) scale(.94);transition:opacity 1s .2s,transform 1.3s var(--ease)}
+#pquote{position:absolute;left:50.58%;top:53%;transform:translate(-50%,-50%);width:42%;text-align:center;text-wrap:balance;font-weight:700;font-size:clamp(11px,4.7cqw,18.2px);line-height:1.22;font-family:"Cormorant Garamond",Garamond,Georgia,serif;color:#1c3a5c;opacity:0;transition:opacity .9s .6s;text-shadow:0 0 10px rgba(255,255,255,.8)}
+#shell.open #sLid{transform:translateY(-18%) scale(1.04);opacity:0}
+#shell.open #sBase{opacity:0;transition-delay:.3s}
+#shell.open #sOpen{opacity:1;transform:none}
+#shell.open #pquote{opacity:1}
+#shell:not(.open) #pquote{transition-delay:0s}

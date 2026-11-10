@@ -1,0 +1,15 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.floorbg{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;background:linear-gradient(transparent,#0a3d70 38%,#1176a8 74%,#27a9c6);-webkit-mask-image:linear-gradient(transparent,#000 26%);mask-image:linear-gradient(transparent,#000 26%)}
+.floorbg>svg.fs{position:absolute;inset:0;width:100%;height:100%}
+.ff{position:absolute;top:var(--y);left:-90px;width:var(--s);animation:patrol var(--d) linear var(--dl) infinite alternate}
+@keyframes swimL{to{transform:translateX(calc(-100vw - 220px))}}
+.sw{animation:sw2 var(--d,4s) ease-in-out infinite alternate}
+@keyframes sw2{from{transform:rotate(calc(var(--a,3deg)*-1))}to{transform:rotate(var(--a,3deg))}}
+.ray{animation:rp 7s ease-in-out infinite alternate}
+@keyframes rp{from{opacity:.5}to{opacity:1}}
+.rpl{animation:rl 6s ease-in-out infinite alternate}
+@keyframes rl{to{transform:translateX(26px)}}
+.fb{position:absolute;bottom:-20px;border:1px solid rgba(255,255,255,.55);border-radius:50%;animation:rise var(--d) linear var(--dl) infinite}
+@include reduced-motion{.ff,.fb{display:none}}

@@ -1,0 +1,7 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.btn{display:inline-block;margin-top:14px;padding:11px 20px;border-radius:99px;background:rgba(255,255,255,.7);color:#173d59;text-decoration:none;font-size:13px;transition:.3s;min-height:44px;line-height:22px}
+.btn:hover{background:#fff;transform:translateY(-2px)}
+.contact{margin:clamp(140px,16vw,200px) auto 0;max-width:620px;text-align:center;padding:34px 26px;background:rgba(10,45,90,.5);h2{color:#fff;margin:6px 0 10px}p{font-size:13px;opacity:.8;margin:0 0 18px}.btn{background:#fff;margin:0}}
+.copy{text-align:center;font-size:10px;opacity:.5;margin-top:22px}

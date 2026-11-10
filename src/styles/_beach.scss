@@ -1,0 +1,10 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.beach{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;.fp{opacity:0;animation:fpIn .7s ease forwards;animation-delay:calc(4.6s + var(--n)*.38s)}.gl{opacity:0;transform-box:fill-box;transform-origin:center;animation:tw var(--d) ease-in-out var(--dl) infinite}.frond{transform-origin:var(--ox) var(--oy);animation:fr 9s ease-in-out infinite alternate}.frond.r{animation-duration:11s;animation-direction:alternate-reverse}.crab{animation:crab 44s ease-in-out infinite}.legs{transform-box:fill-box;transform-origin:center;animation:lg .5s ease-in-out infinite alternate}}
+@keyframes fpIn{to{opacity:1}}
+@keyframes tw{0%,100%{opacity:0;transform:scale(.3)}50%{opacity:.95;transform:scale(1)}}
+@keyframes fr{from{transform:rotate(-2.2deg)}to{transform:rotate(2.2deg)}}
+@keyframes crab{0%,6%{transform:translate(330px,398px)}44%,54%{transform:translate(1170px,410px)}94%,100%{transform:translate(330px,398px)}}
+@keyframes lg{from{transform:scaleY(1)}to{transform:scaleY(.9)}}
+@include reduced-motion{.beach .fp{animation-delay:0s!important}.beach .frond,.beach .crab{animation:none}.beach .crab{transform:translate(330px,398px)}}

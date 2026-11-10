@@ -1,0 +1,5 @@
+@use "variables" as *;
+
+@mixin mobile{@media (max-width:#{$bp-mobile}){@content}}
+@mixin tablet{@media (max-width:#{$bp-tablet}){@content}}
+@mixin reduced-motion{@media (prefers-reduced-motion:reduce){@content}}

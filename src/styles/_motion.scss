@@ -1,0 +1,4 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+@include reduced-motion{.stg>*,.pcard .pv,.process .steps button{opacity:1!important;transform:none!important}*{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}.rv{opacity:1;transform:none}#deep .fish,#deep .big,#deep .bub{display:none}}

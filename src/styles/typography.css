@@ -1,0 +1,79 @@
+/* 1920 / 1024 / 390: decrease by 3px per breakpoint, with an 11px floor. */
+:root {
+  --text-hero: 32px;
+  --text-section: 36px;
+  --text-project: 42px;
+  --text-name: 32px;
+  --text-subtitle: 24px;
+  --text-body: 17px;
+  --text-label: 17px;
+  --text-small: 14px;
+  --text-demo: 14px;
+}
+@media (max-width: 1024px) {
+  :root {
+    --text-hero: 29px;
+    --text-section: 33px;
+    --text-project: 39px;
+    --text-name: 29px;
+    --text-subtitle: 21px;
+    --text-body: 14px;
+    --text-label: 14px;
+    --text-small: 11px;
+    --text-demo: 11px;
+  }
+}
+@media (max-width: 700px) {
+  :root {
+    --text-hero: 26px;
+    --text-section: 30px;
+    --text-project: 36px;
+    --text-name: 26px;
+    --text-subtitle: 18px;
+    --text-body: 11px;
+    --text-label: 11px;
+    --text-small: 11px;
+    --text-demo: 11px;
+  }
+}
+body { font-size: var(--text-body); }
+.hero-intro h1 { font-size: var(--text-hero); }
+.hero-intro > p:last-of-type, .phead p, .pcard .pt p, .approach-note,
+.tp, .contact p, .lab-copy p, .detail-body p { font-size: var(--text-body); line-height: 1.85; }
+.phead h2, .tbox .big, .process h2, .contact h2, .detail-body h2 { font-size: var(--text-section); }
+.pt h3 { font-size: var(--text-project); }
+.lab-copy h3, .detail-body h3 { font-size: var(--text-subtitle); }
+.role-label, .eyebrow, .eyebrow2, .pmeta, .tag, .project-facts,
+.nav-links a, .career-actions a, .project-actions .more, .project-actions button.more,
+.nav-controls button, .contact .btn, #say { font-size: var(--text-label); }
+.nav-brand { font-size: var(--text-label); }
+.nav-brand span, .copy, .pending-info, .pv .cnt, .pv .lbl, .tool-footnote,
+.lab-caption, .lab-label, .lab-code, .tool-picker small,
+.lab-options button, .lab-reset, .lab-sliders label, .semantic-preview code,
+.semantic-preview span, .save-demo button, .save-demo button b,
+.react-preview small, .react-preview b, .figma-preview > span,
+.figma-preview button, .detail-status { font-size: var(--text-small); }
+.tool-picker span { font-size: var(--text-label); }
+.style-preview span { font-size: var(--text-small); }
+.style-preview b, .figma-preview h4 { font-size: var(--text-subtitle); }
+.hint, .detail-visit { font-size: var(--text-label); }
+.pv .win em { font-size: var(--text-small); }
+.profile-identity h1 { font-size: var(--text-name); }
+.profile-block h2 > span, .profile-skill-group h3,
+.profile-toolbar a, .profile-bottom a,
+.profile-toolbar button, .profile-edit-note button, .profile-editor button,
+.profile-role, .profile-skills li, .profile-form-grid label { font-size: var(--text-label); }
+.profile-timeline p, .profile-competencies li, .profile-introduction,
+.profile-form-grid input, .profile-form-grid textarea,
+.profile-editor > p, .profile-editor-help, .profile-feedback { font-size: var(--text-body); line-height: 1.85; }
+.profile-block h2 > small, .profile-empty, .profile-timeline time,
+.profile-about, .profile-me, .profile-en,
+.profile-contact, .profile-contact dt, .profile-contact dd,
+.portrait-placeholder span, .portrait-placeholder small,
+.profile-bottom > span, .profile-edit-note p,
+.profile-form-grid label small, .profile-editor-heading span { font-size: var(--text-small); }
+.profile-wordmark { font-size: var(--text-small) !important; }
+.profile-editor h2 { font-size: var(--text-subtitle); }
+/* Wrapping keeps the larger desktop labels usable at narrow card widths. */
+.profile-skills li, .tool-picker span { overflow-wrap: anywhere; }
+.profile-skill-group li::before { top: 50%; transform: translateY(-50%); }

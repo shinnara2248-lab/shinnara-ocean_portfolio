@@ -1,0 +1,20 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.hero{position:relative;background:radial-gradient(ellipse 60% 45% at 50% 24%,rgba(255,244,214,.75),transparent 70%),linear-gradient(180deg,#fbe6b8 0%,#f5d79b 38%,#efca88 70%,#e6b872 100%);padding:20px 0 0;height:min(84vh,700px);min-height:480px}
+.hero .inner{position:relative;height:100%}
+.hero .inner{z-index:2}
+#sand{position:absolute;left:50%;top:calc(50% - clamp(75px,12vw,140px) + 6px);transform:translate(-50%,-50%);max-width:100%;filter:drop-shadow(0 10px 12px rgba(120,80,30,.28))}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:clamp(150px,24vw,280px);overflow:hidden}
+.wl{position:absolute;inset:0;animation:bob var(--b,5s) ease-in-out infinite alternate}
+.wl svg{position:absolute;bottom:0;left:0;width:200%;height:100%;animation:wv var(--s,14s) linear infinite;animation-direction:var(--dir,normal)}
+@keyframes wv{to{transform:translateX(-50%)}}
+@keyframes bob{from{transform:translateY(-8px)}to{transform:translateY(10px)}}
+
+.dive-stage{position:relative;height:calc(max(480px,min(84vh,700px)) + 8svh);--dive:0;--wave-rise:0px}
+.dive-stage .hero{position:sticky;top:0;overflow:hidden;isolation:isolate}
+.dive-stage .waves{z-index:3;overflow:visible;transform:translateY(var(--wave-rise));will-change:transform;pointer-events:none}
+.dive-stage .waves::after{content:"";position:absolute;top:calc(100% - 2px);left:0;right:0;height:120vh;background:#a8ddd0}
+.dive-stage .hero::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;background:linear-gradient(165deg,rgba(145,231,221,.15),rgba(7,67,105,.18));opacity:0}
+#sand{aspect-ratio:1500/243;width:min(100%,1000px);height:auto}
+@media(prefers-reduced-motion:reduce){.dive-stage{height:max(480px,min(84vh,700px))}.dive-stage .waves{transform:none}.dive-stage .hero::after{display:none}}

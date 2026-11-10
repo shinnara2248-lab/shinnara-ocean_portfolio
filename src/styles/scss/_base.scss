@@ -1,0 +1,14 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+:root{--hd:#{$font-display};--sand:#{$sand};--sea1:#{$sea1};--sea2:#{$sea2};--sea3:#{$sea3};--sea4:#{$sea4};--sea5:#{$sea5};--ink:#{$ink};--ease:#{$ease};box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;font-family:$font-body;color:#fff;background:var(--sea5);overflow-x:hidden}
+.inner{width:min(100% - 48px,1100px);margin-inline:auto}
+#page{position:relative;overflow:clip;background:var(--sea1)}
+.sea{background:linear-gradient(180deg,var(--sea1) 0%,#93d7ce 10%,#72cdce 22%,var(--sea2) 36%,var(--sea3) 56%,var(--sea4) 79%,var(--sea5) 100%);position:relative;padding:24px 0 0}
+section{position:relative;z-index:2}
+.glass{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);border-radius:28px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(10,60,100,.18)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.75}
+h2{font-size:clamp(26px,4.4vw,40px);margin:8px 0 22px;color:#0f3552}

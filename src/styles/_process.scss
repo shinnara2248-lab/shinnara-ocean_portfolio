@@ -1,0 +1,9 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.process{padding:36px}
+.steps{display:flex;gap:12px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:thin;button{flex:1 0 118px;min-height:96px;text-align:left;border:0;border-radius:18px;padding:14px;background:rgba(255,255,255,.28);color:#2b5f80;font:inherit;font-size:13px;cursor:pointer;transition:.3s var(--ease)}button b{display:block;font-size:17px;color:#4aa8dc;margin-bottom:10px}button.act{background:#fff;color:#173d59;transform:translateY(-3px);box-shadow:0 10px 24px rgba(20,80,120,.2)}}
+.steps button:focus-visible,.btn:focus-visible,#shell:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#desc{margin:18px 0 0;color:#173d59;font-size:14px;min-height:22px}
+
+@include mobile{.process{padding:22px}}

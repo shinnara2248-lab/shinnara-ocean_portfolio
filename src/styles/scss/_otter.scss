@@ -1,0 +1,35 @@
+#otter {
+  position:absolute;left:0;top:0;width:168px;aspect-ratio:192/208;
+  z-index:6;cursor:pointer;will-change:transform;overflow:visible;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  &:focus-visible{outline:2px solid #9bdcff;outline-offset:4px;border-radius:40%}
+}
+#oi {
+  display:block;position:absolute;inset:0;background-size:800% 1100%;
+  background-repeat:no-repeat;background-position:0 0;
+  pointer-events:none;user-select:none;
+}
+#say {
+  position:absolute;z-index:3;left:50%;bottom:calc(100% + 8px);
+  width:min(230px,calc(100vw - 24px));padding:11px 14px;
+  background:rgba(243,252,255,.97);color:#173d59;border:1px solid #b0ddef;
+  border-radius:16px;font-size:13px;line-height:1.55;text-align:center;
+  white-space:pre-line;word-break:keep-all;overflow-wrap:anywhere;
+  box-shadow:0 8px 20px rgba(0,45,80,.16);pointer-events:none;
+  opacity:0;visibility:hidden;transform:translate(-50%,6px);
+  transition:opacity .2s,transform .2s,visibility .2s;
+  &.on{opacity:1;visibility:visible;transform:translate(-50%,0)}
+}
+// Equal gutters keep content centered and leave room on both sides.
+.sea{padding-inline:70px}
+@media(max-width:1380px){#otter{width:96px}}
+.rip{position:absolute;z-index:5;width:40px;height:40px;margin:-20px;border:2px solid rgba(255,255,255,.7);border-radius:50%;pointer-events:none}
+@media(max-width:700px){
+  #otter{width:66px}
+  #say{font-size:12px}
+  .sea{padding-inline:54px}
+  .sea .inner{width:calc(100% - 32px)}
+}
+@media(prefers-reduced-motion:reduce){#say{transition:none}}
+
+@media(max-width:1380px) and (min-width:701px){.sea{padding-inline:76px}}

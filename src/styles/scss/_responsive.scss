@@ -1,0 +1,89 @@
+// Desktop 1920 / Tablet 1024 / Mobile 390. Equal gutters preserve the page center.
+.process,.tbox,.pt,.pv,.row,.tcard{min-width:0}
+.copy,.lbl{font-size:11px}
+@media(min-width:1025px){
+  .steps{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;overflow:visible}
+  .steps button{padding:14px 10px;font-size:12px}
+}
+@media(max-width:1024px){
+  .phead h2,.big{font-size:44px}
+  .phead{margin-top:120px;gap:24px}
+  #projects{gap:72px;margin-top:48px}
+  .pcard,.pcard.rev{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+  .pcard.rev .pv{order:2}
+  .pv .win b{font-size:26px}
+  .pv .arr{width:32px;height:32px;right:12%}
+  .pv .win em{font-size:11px;margin-top:8px}
+  .pt h3{font-size:36px}
+  .pt p{font-size:14px;line-height:1.8;margin-bottom:18px}
+  .pmeta{font-size:11px;letter-spacing:.04em}
+  .tag{font-size:11px;padding:7px 12px}
+  .tags{gap:7px;margin-bottom:20px}
+  .tgrid{grid-template-columns:1fr;gap:32px;margin-top:36px}
+  .tcard{max-width:none}
+  .row{grid-template-columns:30px minmax(0,1fr) minmax(100px,180px)}
+  .row .bar{grid-column:auto}
+  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;overflow:visible}
+  .steps button{min-height:86px;padding:12px;font-size:12px}
+  .process{padding:26px}
+  .shellwrap{min-height:650px;padding-top:64px}
+  .hint{font-size:15px}
+}
+@media(max-width:700px){
+  .sea{padding-inline:60px;padding-top:16px}
+  .sea .inner{width:calc(100% - 24px)}
+  h2{font-size:25px;line-height:1.4;word-break:keep-all}
+  .process{padding:18px 14px;border-radius:24px}
+  .process .eyebrow{font-size:11px;letter-spacing:.1em}
+  .process h2{font-size:23px;margin:10px 0 20px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0}
+  .steps button{min-height:76px;padding:10px;border-radius:15px;font-size:11px}
+  .steps button b{font-size:15px;margin-bottom:8px}
+  #desc{font-size:12px;line-height:1.8;min-height:65px;margin-top:18px;word-break:keep-all}
+  .phead{margin-top:88px;display:block}
+  .phead h2,.big{font-size:30px;line-height:1.35}
+  .phead .eyebrow2{margin-bottom:16px}
+  .eyebrow2{font-size:11px;letter-spacing:.12em;gap:12px}
+  .eyebrow2 i{width:40px}
+  .phead p{font-size:12px;line-height:1.8;margin-top:22px;word-break:keep-all}
+  #projects{gap:64px;margin-top:36px}
+  .pcard,.pcard.rev{grid-template-columns:minmax(0,1fr);gap:24px}
+  .pcard.rev .pv{order:0}
+  .pv .win b{font-size:25px}
+  .pv .cnt{font-size:11px;letter-spacing:.06em;left:18%}
+  .pv .lbl{font-size:11px;left:21%;bottom:12%;letter-spacing:.03em}
+  .pv .arr{width:28px;height:28px}
+  .pt h3{font-size:32px;margin:14px 0 12px}
+  .pt p{font-size:13px;line-height:1.85}
+  .pmeta{font-size:11px;gap:10px}
+  .tags{gap:6px;margin-bottom:16px}
+  .tag{padding:6px 10px;font-size:11px}
+  .more{font-size:12px;gap:10px}
+  .tbx{margin-top:88px}
+  .tbox{padding:22px 16px;border-radius:26px}
+  .tbox .big{font-size:27px;margin-top:20px}
+  .tp{font-size:12px;line-height:1.85;margin-top:22px}
+  .tp br,.tcard br{display:none}
+  .tgrid{gap:26px;margin-top:26px}
+  .row{grid-template-columns:20px minmax(0,1fr);gap:10px;padding:20px 0}
+  .row .bar{grid-column:2;margin-top:8px;margin-bottom:14px}
+  .row h4{font-size:15px;overflow-wrap:anywhere}
+  .row small{font-size:11px;line-height:1.7}
+  .tcard{padding:20px;border-radius:23px}
+  .tcard p{font-size:20px;line-height:1.65;margin:22px 0}
+  .tcard small{font-size:11px;letter-spacing:.08em}
+  .contact{padding:24px 16px;margin-top:88px;border-radius:25px}
+  .contact p{font-size:12px;line-height:1.85;word-break:keep-all}
+  .contact .btn{font-size:11px;padding:10px 12px;max-width:100%;overflow-wrap:anywhere}
+  .shellwrap{min-height:500px;padding:56px 0 64px}
+  .hint{font-size:13px;margin-bottom:14px}
+  #shell{width:min(62.6667vw,386.6667px)}
+  .copy{font-size:11px;line-height:1.7}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv,.stg>*,.pcard .pv{transition:none;transform:none}
+}
+// The seafloor now has enough vertical room for layered ruins, without enlarging the shell.
+.shellwrap{min-height:clamp(760px,65vw,1040px)}
+@media(max-width:1024px){.shellwrap{min-height:760px}}
+@media(max-width:700px){.shellwrap{min-height:640px}}
